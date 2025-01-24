@@ -30,7 +30,7 @@ Neste exemplo móstrase a importación de funcións en TypeScript.
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
 
 ```
-tal vez sairavos este erro:
+tal vez sairavos este erro o compilar a través do comando `tsc`:
 ```bash
 tsconfig.json:10:35 - error TS5096: Option 'allowImportingTsExtensions' can only be used when either 'noEmit' or 'emitDeclarationOnly' is set.
 
