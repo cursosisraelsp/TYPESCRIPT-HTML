@@ -4,7 +4,7 @@
 
 Neste exemplo móstrase a importación de funcións en TypeScript.
 
-## PASO A PASO
+## NOTAS
 
 ### 1.Deberase modificar o arquivo `tsconfig.json` para que se importen las funciones de TypeScript. 
 
