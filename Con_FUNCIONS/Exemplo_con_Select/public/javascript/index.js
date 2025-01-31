@@ -1,2 +1,2 @@
-import { selecionDato } from "./funcions.ts";
+import { selecionDato } from "./funcions.js";
 selecionDato();
