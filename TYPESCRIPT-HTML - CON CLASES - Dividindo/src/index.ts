@@ -10,7 +10,7 @@ let instanciaEtiquetaP = new EtiquetaP();
 let etiquetaPCreada = instanciaEtiquetaP.creoReferencia();
 
 // 2º Introduzco o texto 
-instanciaEtiquetaP.introduzcoTexto(etiquetaPCreada,unTexto);
+instanciaEtiquetaP.introduzcoTexto(unTexto);
 
 // 3º Creo a instancia a clase de Pintar no HTML
 let pintoNoHTML = new PintarElemento(document.body)
