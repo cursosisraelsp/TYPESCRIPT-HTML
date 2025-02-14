@@ -12,15 +12,16 @@ let etiquetaPCreada = instanciaEtiquetaP.creoReferencia();
 // 2º Introduzco o texto 
 instanciaEtiquetaP.introduzcoTexto(etiquetaPCreada,unTexto);
 
-// 3º Pinto
+// 3º Creo a instancia a clase de Pintar no HTML
 let pintoNoHTML = new PintarElemento(document.body)
 
-//pintoNoHTML.pintarOFinal(referenciaAPintar);
+// 4º Pinto no HTML
 pintoNoHTML.pintarOFinal(instanciaEtiquetaP.devolverReferencia())
 
 
 
 //let referenciaAPintar = instanciaEtiquetaP.devolverReferencia()
+//pintoNoHTML.pintarOFinal(referenciaAPintar);
 /**
  * console.log(`etiqueta? ${instanciaEtiquetaP.introduzcoTexto(etiquetaPCreada,unTexto)}`)
 console.log('etiqueta2?', instanciaEtiquetaP.devolverReferencia())
