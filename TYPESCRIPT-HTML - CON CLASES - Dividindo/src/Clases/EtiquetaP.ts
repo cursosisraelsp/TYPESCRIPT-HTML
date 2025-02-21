@@ -2,7 +2,6 @@ import { Etiqueta } from "./Etiqueta.js";
 
 class EtiquetaP extends Etiqueta{
     private referencia: any;// Atributo ou variable local dentro da clase
-
     creoReferencia(): HTMLParagraphElement {
         this.referencia = document.createElement("p")
         return this.referencia;
@@ -13,7 +12,6 @@ class EtiquetaP extends Etiqueta{
     devolverReferencia(): HTMLParagraphElement {
         return this.referencia
     }
-
 }
 
 export {EtiquetaP}
