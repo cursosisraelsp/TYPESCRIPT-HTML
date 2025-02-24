@@ -5,8 +5,8 @@
      */
 class EtiquetaA{
     private etiquetaA;
-    constructor(etiquetaA:HTMLElement){
-        this.etiquetaA = etiquetaA;
+    constructor(){
+        this.etiquetaA = document.createElement("a")
     }
     public introducirAtributoHref(direccion:string){
         this.etiquetaA.setAttribute('href',direccion)

@@ -1,40 +1,43 @@
-import { EtiquetaA } from "../Etiquetas/Etiquetas";
+import { EtiquetaA } from "../Etiquetas/EtiquetaA";
+import { EtiquetaDivWithImg } from "../Etiquetas/EtiquetaDivWithImg";
+import { EtiquetaImg } from "../Etiquetas/EtiquetaImg";
 import { Navegacion } from "./Navegacion";
 
 class NavegacionMenuPrincipal extends Navegacion{
     private referenciaEtiquetaA: EtiquetaA;// Clase da etiquetaA
-
-    constructor(etiquetaA:HTMLAnchorElement,
-         etiquetaImg: HTMLImageElement,
-         etiquetaDiv:HTMLDivElement){
-        super(etiquetaA,etiquetaImg,etiquetaDiv);
-        this.referenciaEtiquetaA = new EtiquetaA(etiquetaA)
+    private referenciaEtiquetaDivWithImg: EtiquetaDivWithImg;
+    private referenciaEtiquetaImg:EtiquetaImg;
+    constructor(){
+        super();// obliga a ter 'super()'
+        this.referenciaEtiquetaA = new EtiquetaA();
+        this.referenciaEtiquetaDivWithImg = new EtiquetaDivWithImg();
+        // referencia creada dende a clase EtiquetaImg
+        this.referenciaEtiquetaImg = new EtiquetaImg();
     }
 
-    crearAtributos(direccion:string): void {
-        this.referenciaEtiquetaA.introducirAtributoHref(direccion)
+    crearAtributos(direccion:string,enlace:string): void {
         // {Clase EtiquetaA}
-        // {Clase EtiquetaImg}
+        this.referenciaEtiquetaA.introducirAtributoHref(direccion)
         // {Clase EtiquetaDiv}
+        
+        // {Clase EtiquetaImg}
+        this.referenciaEtiquetaImg.introduzcoAtributoSrc(enlace)
     }
-
     pintarEnPantalla(): void {
-        this.referenciaEtiquetaA.pintoEnHTML()
+        this.referenciaEtiquetaA.pintoEnHTML();
+        this.referenciaEtiquetaDivWithImg.pintoEnHTML();
+        this.referenciaEtiquetaImg.pintoEnHTML()
     }
     introducirTextoNasEtiquetas(texto:string){
         this.referenciaEtiquetaA.introducirTexto(texto)
     }
-    establecerEstilo(estilo:string): void {
-        this.referenciaEtiquetaA.introducirAtributoClass(estilo)
+    establecerEstilo(estiloA:string,estiloDiv:string,estiloImg:string): void {
+        this.referenciaEtiquetaA.introducirAtributoClass(estiloA);
+        this.referenciaEtiquetaDivWithImg.introducirAtributoClass(estiloDiv);
+        this.referenciaEtiquetaImg.introducirAtributoClass(estiloImg);
     }
-
 }
-/* 
-let a = document.createElement("a");
-let div = document.createElement("div");
-let img = document.createElement("img");
-let navegar = new NavegacionMenuPrincipal(a,img,div) 
-*/
+
 
 export{NavegacionMenuPrincipal}
  

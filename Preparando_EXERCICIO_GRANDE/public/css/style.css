@@ -8,3 +8,15 @@
 a{
     text-decoration: none;
 }
+
+.test-selector-div{
+    width: 150px;
+    height: 150px;
+    background-color: brown;
+}
+
+.test-selector-img{
+    width: 150px;
+    height: 150px;
+    
+}

@@ -1,15 +1,27 @@
 import { NavegacionMenuPrincipal } from "./Clases/MenuPrincipalPC";
 
-
+// Creo as etiquetas 
 let a = document.createElement("a");
 let div = document.createElement("div");
 let img = document.createElement("img");
+
+// Utilizo a clase NavegacionMenuPrincipal
+// para crear o menú
+// INSTANCIO A CLASE DE NAVEGACIÓN DO MENÚ PRINCIPAL
 let navegar = new NavegacionMenuPrincipal(a,img,div);
 
-navegar.crearAtributos("#")
-navegar.establecerEstilo("selector-a");
+// 1º Na etiqueta 'a' creamos no atributo 'href=#'
+navegar.crearAtributos("#","./imaxes/codigo.png");
+// 2º Introducimos no atributo 'class' o estilo
+navegar.establecerEstilo("selector-a","test-selector-div","test-selector-img");
 navegar.introducirTextoNasEtiquetas("este é o enlace")
 navegar.pintarEnPantalla()
+
+
+
+
+
+
 
 /*
 let instanciaEtiquetaA = new EtiquetaA(document.createElement("a"))
