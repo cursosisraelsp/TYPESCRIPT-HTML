@@ -28,7 +28,7 @@ class NavegacionMenuPrincipal extends Navegacion{
         this.referenciaEtiquetaDivWithImg.pintoEnHTML();
         this.referenciaEtiquetaImg.pintoEnHTML()
     }
-    introducirTextoNasEtiquetas(texto:string){
+    introducirTextoNasEtiquetas(texto:string):void{
         this.referenciaEtiquetaA.introducirTexto(texto)
     }
     establecerEstilo(estiloA:string,estiloDiv:string,estiloImg:string): void {
