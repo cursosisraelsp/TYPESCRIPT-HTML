@@ -1,31 +1,53 @@
-/**
-     * No constructor pasar a referencia 
-     * e nos métodos os valores para os 
-     * diferentes atributos
-     */
 class EtiquetaA{
-    private etiquetaA;
-    constructor(){
-        this.etiquetaA = document.createElement("a")
-    }
-    public introducirAtributoHref(direccion:string){
-        this.etiquetaA.setAttribute('href',direccion)
-    }
-
-    public introducirAtributoClass(estilo:string){
-        this.etiquetaA.setAttribute('class',estilo)
-    }
-
-    public introducirTexto(textoEtiqueta:string){
-        this.etiquetaA.innerHTML = textoEtiqueta;
+    
+    private numEtiquetasImg:number;
+    private etiquetasA: HTMLAnchorElement[]=[];
+    private estilos:string[];
+    private direccions:string[];
+    private textos:string[];
+    constructor(numEtiquetasImg:number,estilos:string[],direccions:string[],textos:string[]){
+        this.estilos = estilos;
+        this.numEtiquetasImg = numEtiquetasImg;
+        this.direccions = direccions;
+        this.textos = textos;
     }
 
-    public pintoEnHTML(){
-        document.body.append(this.etiquetaA)
+    public EtiquetasA(){
+        this.crearEtiquetasA();
+        this.introducirAtributoClass();
+        this.introducirAtributoHref();
+        this.introducirTexto();
     }
 
-    get valorRefEtiquetaA() {
-        return this.etiquetaA
+    private crearEtiquetasA(){
+        for(let contador = 0; contador < this.numEtiquetasImg;contador++){
+            
+            this.etiquetasA.push(document.createElement("a"))
+        }
+    }
+    private introducirAtributoHref(){
+        for(let contador = 0; contador < this.numEtiquetasImg;contador++){
+            this.etiquetasA[contador].setAttribute('href',this.direccions[contador]);
+        }
+        
+    }
+
+    private introducirAtributoClass(){
+        for(let contador = 0; contador < this.numEtiquetasImg;contador++){
+            this.etiquetasA[contador].setAttribute('class',this.estilos[contador]);
+        }
+    }
+
+    private introducirTexto(){
+        for(let contador = 0; contador < this.numEtiquetasImg;contador++){
+            this.etiquetasA[contador].innerHTML = this.textos[contador];
+        }
+    }
+
+    
+
+    get DevolverEtiquetasA() {
+        return this.etiquetasA
     }
 
 }

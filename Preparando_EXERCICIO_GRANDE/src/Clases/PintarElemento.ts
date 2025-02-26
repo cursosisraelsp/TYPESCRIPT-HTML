@@ -1,22 +1,26 @@
 class PintarElemento {
-    private referencia;// Atributos
+    //private referencia;// Atributos
 
-    constructor(referenciaEtiqueta : HTMLElement){
+    /* constructor(referenciaEtiqueta : HTMLElement){
         this.referencia = referenciaEtiqueta
-    }
+    } */
 
-    pintarAntes(ondePintoAntes: HTMLElement): void{
-        this.referencia.before(ondePintoAntes)
+    pintarAntes(ondePintoAntes: HTMLElement,referencia:HTMLElement){
+        referencia.before(ondePintoAntes);
+        return referencia
     }
-    pintarDespois(ondePintoDespois: HTMLElement): void{
-        this.referencia.after(ondePintoDespois)
+    pintarDespois(ondePintoDespois: HTMLElement,referencia:HTMLElement){
+        referencia.after(ondePintoDespois)
+        return referencia
     }
-    pintarOComenzo(ondePintoOComenzo: HTMLElement): void{
-        this.referencia.prepend(ondePintoOComenzo)
+    pintarOComenzo(ondePintoOComenzo: HTMLElement,referencia:HTMLElement){
+        referencia.prepend(ondePintoOComenzo);
+        return referencia
     }
-    pintarOFinal(ondePintoOFinal: HTMLElement): void{
-        this.referencia.append(ondePintoOFinal)
-    }
+    pintarOFinal(ondePintoOFinal: HTMLElement,referencia:HTMLElement){
+        referencia.append(ondePintoOFinal)
+        return referencia
+    } 
 }
 
 export {PintarElemento}

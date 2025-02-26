@@ -1,8 +1,9 @@
 .selector-a{
+    display: block;
     background-color: black;
     width: 300px;
     border: 1px solid red;
-    height: 20px;
+    height: 176px;
     color: white;
 }
 a{
@@ -19,4 +20,7 @@ a{
     width: 150px;
     height: 150px;
     
+}
+img{
+    background-color: blue;
 }
