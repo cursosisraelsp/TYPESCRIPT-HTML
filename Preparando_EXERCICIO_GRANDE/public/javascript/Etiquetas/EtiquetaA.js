@@ -1,22 +1,40 @@
 class EtiquetaA {
-    constructor() {
-        this.etiquetaA = document.createElement("a");
+    constructor(datosEtiquetasA) {
+        this.etiquetasA = [];
+        this.estilos = datosEtiquetasA.estilos;
+        this.numEtiquetasImg = datosEtiquetasA.numEtiquetasImg;
+        this.direccions = datosEtiquetasA.direccions;
+        this.textos = datosEtiquetasA.textos;
     }
-    introducirAtributoHref(direccion) {
-        this.etiquetaA.setAttribute('href', direccion);
+    EtiquetasA() {
+        this.crearEtiquetasA();
+        this.introducirAtributoClass();
+        this.introducirAtributoHref();
+        this.introducirTexto();
     }
-    introducirAtributoClass(estilo) {
-        this.etiquetaA.setAttribute('class', estilo);
-        //this.etiquetaA.className = estilo;
+    crearEtiquetasA() {
+        for (let contador = 0; contador < this.numEtiquetasImg; contador++) {
+            this.etiquetasA.push(document.createElement("a"));
+        }
     }
-    introducirTexto(textoEtiqueta) {
-        this.etiquetaA.innerHTML = textoEtiqueta;
+    introducirAtributoHref() {
+        for (let contador = 0; contador < this.numEtiquetasImg; contador++) {
+            this.etiquetasA[contador].setAttribute('href', this.direccions[contador]);
+        }
     }
-    pintoEnHTML() {
-        document.body.append(this.etiquetaA);
+    introducirAtributoClass() {
+        for (let contador = 0; contador < this.numEtiquetasImg; contador++) {
+            this.etiquetasA[contador].setAttribute('class', this.estilos[contador]);
+        }
     }
-    get valorRefEtiquetaA() {
-        return this.etiquetaA;
+    introducirTexto() {
+        for (let contador = 0; contador < this.numEtiquetasImg; contador++) {
+            this.etiquetasA[contador].innerHTML = this.textos[contador];
+        }
+    }
+    get DevolverEtiquetasA() {
+        this.EtiquetasA();
+        return this.etiquetasA;
     }
 }
 export { EtiquetaA };

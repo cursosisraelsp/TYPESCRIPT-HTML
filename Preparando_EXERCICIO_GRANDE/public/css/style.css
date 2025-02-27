@@ -1,19 +1,29 @@
 .selector-a{
-    display: block;
+    
     background-color: black;
-    width: 300px;
+    width: 150px;
     border: 1px solid red;
-    height: 176px;
+    border-radius: 3px;
+    padding: 5px;
     color: white;
+    margin-left: 3px;
+    margin-right: 3px;
+    display: flex;
+    justify-content: space-around;
+
 }
 a{
     text-decoration: none;
 }
 
 .test-selector-div{
-    width: 150px;
+    width: 175px;
     height: 150px;
     background-color: brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .test-selector-img{

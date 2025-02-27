@@ -23,19 +23,24 @@ class EtiquetaImg {
     creamosEtiquetas() {
         this.sacamosSrc();
         for (let src of this.arrayEtiquetas) {
-            console.log("src ", src);
+            //console.log("src ",src)
             let etiqueta = document.createElement("img");
             etiqueta.setAttribute("src", src); //.setAttribute devolve tipo 'void'
             this.etiquetasCreadas.push(etiqueta);
         }
-        console.log('this.etiquetasCreadas ', this.etiquetasCreadas);
-        return this.etiquetasCreadas;
     }
     sacamosSrc() {
         for (let variable in this.enlacesIconos) {
-            console.log(`sacamosSrc ${variable} ${this.enlacesIconos[variable]}`);
+            //console.log(`sacamosSrc ${variable} ${this.enlacesIconos[variable as keyof Icono]}`)
             this.arrayEtiquetas.push(this.enlacesIconos[variable]);
         }
+    }
+    get EtiquetasImg() {
+        this.creamosEtiquetas();
+        return this.etiquetasCreadas;
+    }
+    get NumEtiquetasImg() {
+        return this.arrayEtiquetas.length;
     }
 }
 export { EtiquetaImg };

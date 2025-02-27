@@ -2,17 +2,21 @@
  * A entrada do constructor será @etiquetaDiv : document.createElement("div")
  */
 
+import { IWrapperDiv } from "../Interfaces/IWrapperDiv.js";
+
 class EtiquetaDiv{
     // O 'protected' fai que a poda ver noutra clase, pero dende fora non
-    protected etiquetaDiv;
-    constructor(){
+    protected etiquetaDiv: HTMLDivElement;
+    protected estiloDiv;
+    constructor(estilo:IWrapperDiv){
         //this.etiquetaDiv = etiquetaDiv;
         this.etiquetaDiv = document.createElement("div");
+        this.estiloDiv = estilo;
     }
 
-    public introducirAtributoClass(estilo:string):void{
+    private introducirAtributoClass():void{
         // introduciremos o estilo
-        this.etiquetaDiv.setAttribute("class",estilo)
+        this.etiquetaDiv.setAttribute("class",this.estiloDiv.estilo)
 
     }
 
@@ -20,7 +24,8 @@ class EtiquetaDiv{
         document.body.append(this.etiquetaDiv)
     }
 
-    get referenciaEtiquetaDiv(){
+    get referenciaEtiquetaDiv():HTMLDivElement{
+        this.introducirAtributoClass()
         return this.etiquetaDiv;
     }
     

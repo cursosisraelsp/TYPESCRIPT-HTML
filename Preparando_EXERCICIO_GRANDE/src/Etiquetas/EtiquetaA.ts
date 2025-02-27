@@ -1,3 +1,5 @@
+import { IEtiquetaA } from "../Interfaces/IEtiquetaA.js";
+
 class EtiquetaA{
     
     private numEtiquetasImg:number;
@@ -5,14 +7,14 @@ class EtiquetaA{
     private estilos:string[];
     private direccions:string[];
     private textos:string[];
-    constructor(numEtiquetasImg:number,estilos:string[],direccions:string[],textos:string[]){
-        this.estilos = estilos;
-        this.numEtiquetasImg = numEtiquetasImg;
-        this.direccions = direccions;
-        this.textos = textos;
+    constructor(datosEtiquetasA: IEtiquetaA){
+        this.estilos = datosEtiquetasA.estilos;
+        this.numEtiquetasImg = datosEtiquetasA.numEtiquetasImg;
+        this.direccions = datosEtiquetasA.direccions;
+        this.textos = datosEtiquetasA.textos;
     }
 
-    public EtiquetasA(){
+    private EtiquetasA(){
         this.crearEtiquetasA();
         this.introducirAtributoClass();
         this.introducirAtributoHref();
@@ -46,7 +48,8 @@ class EtiquetaA{
 
     
 
-    get DevolverEtiquetasA() {
+    get DevolverEtiquetasA():HTMLAnchorElement[] {
+        this.EtiquetasA()
         return this.etiquetasA
     }
 

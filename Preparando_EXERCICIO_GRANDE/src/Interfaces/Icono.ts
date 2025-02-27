@@ -1,4 +1,4 @@
-export interface Icono{
+export interface IIcono{
     home:string,
     grupo:string,
     etiqueta: string

@@ -1,7 +1,7 @@
-import { EtiquetaDiv } from "./EtiquetaDiv";
+import { EtiquetaDiv } from "./EtiquetaDiv.js";
 class EtiquetaDivWithImg extends EtiquetaDiv {
-    constructor() {
-        super();
+    constructor(estilo) {
+        super(estilo);
     }
     // Este método é dúvida, poderíase extender a outra Clase
     introducirEtiquetaImg(etiquetaImg) {

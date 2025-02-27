@@ -1,9 +1,10 @@
-import { EtiquetaDiv } from "./EtiquetaDiv";
+import { IWrapperDiv } from "../Interfaces/IWrapperDiv.js";
+import { EtiquetaDiv } from "./EtiquetaDiv.js";
 
 class EtiquetaDivWithImg extends EtiquetaDiv{
 
-    constructor(){
-        super()
+    constructor(estilo:IWrapperDiv){
+        super(estilo)
     }
     // Este método é dúvida, poderíase extender a outra Clase
     public introducirEtiquetaImg(etiquetaImg: HTMLImageElement){
