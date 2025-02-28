@@ -10,7 +10,8 @@ class NavegacionMenuPrincipal extends Navegacion {
         this.direccion = ''; // témola que inicializar o non iniciala no constructor
         this.etiquetasCreadasImg = [];
         this.etiquetasCreadasA = [];
-        this.etiquetaDivCreada = document.createElement("p");
+        //Inicializo a variable porque non a teño no constructor
+        this.etiquetaDivCreada = document.createElement("a");
         this.referenciaEtiquetaA = new EtiquetaA(etiquetasA);
         this.referenciaEtiquetaImg = new EtiquetaImg(enlace);
         this.posicionarEtiquetaCreada = new PintarElemento();

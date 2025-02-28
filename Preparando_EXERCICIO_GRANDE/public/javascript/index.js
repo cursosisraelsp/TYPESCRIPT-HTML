@@ -1,4 +1,6 @@
 import { NavegacionMenuPrincipal } from "./Clases/MenuPrincipalPC.js";
+import { EtiquetaBoton } from "./Etiquetas/EtiquetaButton.js";
+import { Comunicacion } from "./Xenericos/Clases/Comunicacion.js";
 // Utilizo a clase NavegacionMenuPrincipal
 // para crear o menú
 // INSTANCIO A CLASE DE NAVEGACIÓN DO MENÚ PRINCIPAL
@@ -18,3 +20,12 @@ let estiloDiv = {
 };
 let navegar = new NavegacionMenuPrincipal(iconos, etiquetasA, estiloDiv);
 navegar.pintarEnPantalla("#");
+//#### 
+let unBoton = {
+    etiquetaButton: document.createElement("button"),
+    estilo: "boton",
+    texto: "Traer Datos do Servidor"
+};
+let instanciaBoton = new EtiquetaBoton(unBoton);
+let instanciaComunicacion = new Comunicacion(instanciaBoton);
+instanciaComunicacion.getDatosServer();

@@ -1,7 +1,10 @@
 import { NavegacionMenuPrincipal } from "./Clases/MenuPrincipalPC.js";
+import { EtiquetaBoton } from "./Etiquetas/EtiquetaButton.js";
+import { IBoton } from "./Interfaces/IBoton.js";
 import { IIcono } from "./Interfaces/Icono.js";
 import { IEtiquetaA } from "./Interfaces/IEtiquetaA.js";
 import { IWrapperDiv } from "./Interfaces/IWrapperDiv.js";
+import { Comunicacion } from "./Xenericos/Clases/Comunicacion.js";
 
 // Utilizo a clase NavegacionMenuPrincipal
 // para crear o menú
@@ -24,6 +27,19 @@ let estiloDiv: IWrapperDiv = {
 let navegar = new NavegacionMenuPrincipal(iconos,etiquetasA,estiloDiv);
 
 navegar.pintarEnPantalla("#")
+
+
+//#### 
+let unBoton : IBoton = {
+    etiquetaButton: document.createElement("button"),
+    estilo:"boton",
+    texto:"Traer Datos do Servidor"
+}
+let instanciaBoton = new EtiquetaBoton(unBoton);
+
+let instanciaComunicacion = new Comunicacion<EtiquetaBoton>(instanciaBoton);
+
+instanciaComunicacion.getDatosServer()
 
 
 
