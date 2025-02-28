@@ -5,6 +5,10 @@ const app = express();
 
 // Accedo o arquivo estático
 app.use(express.static(path.join(__dirname, "public")));
+//### GETTERS
+
+
+//### POST
 
 //START SERVER
 app.listen(3000, function () {

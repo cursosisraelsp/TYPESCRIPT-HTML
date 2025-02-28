@@ -16,7 +16,9 @@ class NavegacionMenuPrincipal extends Navegacion{
     private direccion: string = '';// témola que inicializar o non iniciala no constructor
     private etiquetasCreadasImg : HTMLImageElement[] = [];
     private etiquetasCreadasA: HTMLAnchorElement[] = [];
-    private etiquetaDivCreada: any;// TRAMPA
+
+    //Inicializo a variable porque non a teño no constructor
+    private etiquetaDivCreada: HTMLElement = document.createElement("a");
 
     constructor(enlace:IIcono,etiquetasA: IEtiquetaA,estilo: IWrapperDiv){
         super();
@@ -33,8 +35,8 @@ class NavegacionMenuPrincipal extends Navegacion{
         this.etiquetasCreadasImg = this.referenciaEtiquetaImg.EtiquetasImg;
     }
     pintarEnPantalla(direccion:string): void {
-        let etiquetasConImg: any[] = [];//TRAMPA
-        let divConEtiquetas: any;
+        let etiquetasConImg: HTMLElement[] = [];
+        let divConEtiquetas: HTMLElement = document.createElement("a");
         this.direccion = direccion;
         this.crearEtiquetas()
 
@@ -45,7 +47,7 @@ class NavegacionMenuPrincipal extends Navegacion{
         console.log("this.etiquetaDivCreada ",this.etiquetaDivCreada)
         for(let contador = 0; contador < this.referenciaEtiquetaImg.NumEtiquetasImg ; contador ++){
             divConEtiquetas = this.agregandoEtiqueta(etiquetasConImg[contador],this.etiquetaDivCreada)
-            //console.log(this.agregandoEtiqueta(etiquetasConImg[contador],this.etiquetaDivCreada))
+           
         }
         document.body.prepend(divConEtiquetas)
     }

@@ -1,8 +1,4 @@
 class PintarElemento {
-    //private referencia;// Atributos
-    /* constructor(referenciaEtiqueta : HTMLElement){
-        this.referencia = referenciaEtiqueta
-    } */
     pintarAntes(ondePintoAntes, referencia) {
         referencia.before(ondePintoAntes);
         return referencia;
